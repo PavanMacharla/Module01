@@ -1,0 +1,75 @@
+Write a code to get the below details of Fluffyy so that
+I can take him to vet.
+
+Solution:
+
+var cat = {
+name: ‘Fluffy’,
+activities: [‘play’, ‘eat cat food’],
+catFriends: [
+{
+name: ‘bar’,
+activities: [‘be grumpy’, ‘eat bread omblet’],
+weight: 8,
+furcolor: ‘white’
+}, 
+{
+name: ‘foo’,
+activities: [‘sleep’, ‘pre-sleep naps’],
+weight: 3
+}
+]
+}console.log(cat);
+
+
+1.Add height and weight to Fluffy?
+Solution:
+Var cat= {
+Name: `Fluffy`,
+Weight: `5kg`,
+Height: `15cm`,
+}
+
+2. Fluffy name is spelled wrongly. Update it to Fluffyy
+Solution:
+cat.name="Fluffyy"
+
+3. List all the activities of Fluffyy’s catFriends.
+Solution:
+console.log(cat.catFriends[0].activities+cat.catFriends[1].activities)
+    or 
+  for(let i=0;i<2;i++){console.log(cat.catFriends[i].activities)}
+
+4.Print the catFriends names.
+Solution:
+console.log(cat.catFriends[0].name + cat.catFriends[1].name)
+    or
+for(let i=0;i<2;i++){console.log(cat.catFriends[i].name)}
+
+
+5.Print the total weight of catFriends.
+Solution:
+console.log(cat.catFriends[0].weight+cat.catFriends[1].weight)
+
+6.Print the total activities of all cats (op:6)
+Solution:
+
+console.log(cat.activities + cat.catFriends[0].activities+cat.catFriends[1].activities)
+
+
+7. Add 2 more activities to bar & foo cats
+Solution:
+cat.activities + cat.catFriends[0].activities.push('drink','dance')
+   cat.activities + cat.catFriends[0].activities.push('swim','sing')
+
+8. Update the fur color of bar
+Solution:
+cat.catFriends[0].furcolor="Blue"
+
+
+
+
+
+
+
+

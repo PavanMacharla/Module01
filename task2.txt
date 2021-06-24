@@ -1,0 +1,61 @@
+Solving problem using array on rest countries data. using index.html and script.js file(using rest countries api)
+
+1-Get all the countries from Asia continent/region using Filter function
+
+2-Get all the countries with population of less than 2 Lakhs using Filter Function
+
+3-Print the countries which use US dollars as currency
+
+4-print the sum of total population of the countries by using reduce function
+
+5-Get the country name,capital,flag by using forEach loop
+
+solution
+
+
+var request = new XMLHttpRequest();  //create a xml http request object
+
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);  // initiate a connection
+
+request.send();  //sending the connection
+
+//receving the data
+request.onload = function () {
+    var data = JSON.parse(this.response);
+    console.log(data);
+
+     //1.filter function to print all countries in Asia region
+    var countries = data.filter((ele) => ele.region === "Asia");
+    console.log(countries);
+
+    //2.filter function countries population is less than 200000  
+    var countries = data.filter((ele) => ele.population <= 200000);
+    console.log(countries);
+
+    //3.US dollar as currency countries
+    let curr = data.filter((ele) => {
+        for (var i in ele.currencies) {
+            if (ele.currencies[i].code === 'USD') {
+                return true;
+            }
+        }
+    });
+    console.log(curr);
+
+    //4.Reduce function  to print population of all countries
+    var res = data.reduce(function foo(acc, ele) {
+        return acc + ele.population;
+    }, 0);
+    console.log(res);
+
+    //5.forEach loop to get country name ,capital,flag
+    data.forEach(element => {
+        console.log(element.name + " " + element.capital + " " + element.flag);
+    })
+
+
+}
+
+
+
+
