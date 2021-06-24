@@ -1,7 +1,7 @@
 Write a code to get the below details of Fluffyy so that
 I can take him to vet.
 
-Solution:
+Solution is :
 
 var cat = {
 name: ‘Fluffy’,
